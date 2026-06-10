@@ -88,8 +88,10 @@ def build_model(df_json):
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
     import numpy as np
+    import io
 
-    df = pd.read_json(df_json, orient="records")
+    # Kode baru yang benar
+    df = pd.read_json(io.StringIO(df_json), orient="records")
     df["cleaned_text"] = df["content"].apply(preprocess_text)
     df["sentiment"] = df["score"].apply(lambda x: 1 if x > 3 else 0)
 
