@@ -259,7 +259,7 @@ if st.session_state.df_result is not None:
 
         axes[1].pie(
             counts.values, labels=counts.index, autopct="%1.1f%%",
-            colors=["#2ca02c", "#d62728"], startangle=90, explode=[0.05] * len(counts),
+            colors=["#d62728", "#2ca02c"], startangle=90, explode=[0.05] * len(counts),
             textprops={"fontsize": 12},
         )
         axes[1].set_title("Proporsi Sentimen", fontsize=13)
